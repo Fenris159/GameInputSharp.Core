@@ -1,0 +1,21 @@
+{
+    "editor.wordWrap": "off",
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    },
+    "[plaintext]": {
+        "editor.wordWrap": "off"
+    },
+    "markdownlint.config": {
+        "default": true,
+        "MD007": { "indent": 2 },
+        "MD012": false,
+        "MD013": false,
+        "MD024": { "allow_different_nesting": true },
+        "MD030": { "ul_single": 1, "ol_single": 1, "ol_multi": 1 },
+        "MD033": false,
+        "MD036": false,
+        "MD041": false,
+        "MD060": false
+    }
+}

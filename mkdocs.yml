@@ -1,0 +1,100 @@
+# GameInputSharp.Core — offline documentation site
+# Build: mkdocs build (output in site/). Pack with NuGet to ship offline docs.
+
+site_name: GameInputSharp.Core
+site_description: Universal C# wrapper for Microsoft GameInput — gamepads, keyboards, mice, haptics, callbacks. One-stop documentation.
+site_author: GameInputSharp
+site_url: null  # offline; no base URL
+repo_url: https://github.com/Fenris159/GameInputSharp.Core
+edit_uri: ""
+copyright: "Copyright &copy; GameInputSharp. MIT License. Not affiliated with Microsoft."
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: csharp
+          class: highlight
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+      base_path: docs
+  - toc:
+      permalink: true
+      toc_depth: 2
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - Getting started:
+    - Quick start: quickstart.md
+    - Full usage guide: USAGE.md
+    - Code examples: code-examples.md
+  - API & mapping:
+    - API constants & flags: API_REFERENCE.md
+    - Axis & button mapping: MAPPING_REFERENCE.md
+  - Guides:
+    - Compatibility (Unity, MonoGame, etc.): COMPATIBILITY.md
+    - Samples:
+      - Samples by environment: samples/index.md
+      - Samples — Unity: samples/unity.md
+      - Samples — MonoGame: samples/monogame.md
+      - Samples — Godot: samples/godot.md
+      - Samples — Stride: samples/stride.md
+      - Samples — WPF / WinUI: samples/wpf-winui.md
+    - Distribution (Microsoft.GameInput): DISTRIBUTION.md
+    - Security & safety: SECURITY.md
+  - Reference:
+    - API alignment: API_ALIGNMENT.md
+    - Changelog: CHANGELOG.md
+    - Audit: AUDIT.md
+    - Test results: TEST_RESULTS.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md

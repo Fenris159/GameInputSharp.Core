@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>GameInputSharp</RootNamespace>
+    <AssemblyName>GameInputSharp.Core</AssemblyName>
+    <PackageId>GameInputSharp.Core</PackageId>
+    <Version>0.1.0-alpha</Version>
+    <Description>Universal, idiomatic C# wrapper for Microsoft.GameInput. Gamepads, keyboards, mice, advanced haptics, device callbacks, and force feedback. Requires Microsoft.GameInput NuGet and gameinput.dll redistribution per Microsoft rules. For medical/simulation/robotics extensions, use the GameInputSharp.Enterprise package.</Description>
+    <PackageTags>gameinput;haptics;input;gaming;xbox;controller;gamepad;windows;unity;monogame</PackageTags>
+    <PackageProjectUrl>https://github.com/Fenris159/GameInputSharp.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Fenris159/GameInputSharp.Core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Optional: add assets/icon.png and uncomment: <PackageIcon>icon.png</PackageIcon> -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <TargetFrameworks>net8.0;net9.0;net8.0-windows</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.GameInput" Version="3.2.138" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="..\..\docs\USAGE.md" Pack="true" PackagePath="docs\" Visible="false" />
+    <None Include="..\..\docs\COMPATIBILITY.md" Pack="true" PackagePath="docs\" Visible="false" />
+  </ItemGroup>
+
+  <!-- Offline docs site (MkDocs). Build from repo root: pip install -r requirements-docs.txt && mkdocs build. Then dotnet pack. -->
+  <Target Name="RunMkDocsBeforePack" BeforeTargets="GenerateNuspec;Pack" Condition="Exists('$(MSBuildThisFileDirectory)..\..\mkdocs.yml')">
+    <Exec Command="mkdocs build" WorkingDirectory="$(MSBuildThisFileDirectory)..\.." IgnoreExitCode="true" />
+  </Target>
+  <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)..\..\site')">
+    <None Include="$(MSBuildThisFileDirectory)..\..\site\**\*" Pack="true" PackagePath="docs-site\%(RecursiveDir)%(Filename)%(Extension)" Visible="false" />
+  </ItemGroup>
+
+</Project>

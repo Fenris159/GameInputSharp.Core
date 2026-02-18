@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <RootNamespace>GameInputSharp.Samples.Console</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\GameInputSharp.Core\GameInputSharp.Core.csproj" />
+    <!-- Explicit for testing: ensures Microsoft.GameInput is restored when running this sample (runtime DLL still required on machine) -->
+    <PackageReference Include="Microsoft.GameInput" Version="3.2.138" />
+  </ItemGroup>
+
+</Project>
