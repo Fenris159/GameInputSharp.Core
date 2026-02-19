@@ -91,12 +91,6 @@ See **[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md)** for Unity, MonoGame, Godo
 
 ---
 
-## Packaging (NuGet)
-
-To build the NuGet package: set `GeneratePackageOnBuild` to `true` in the library project or run `dotnet pack`. The package includes symbols (snupkg) and is tagged for `gameinput`, `haptics`, `input`, `windows`, `unity`, `monogame`. Ensure **Microsoft.GameInput** and GameInput runtime redistribution are documented for your consumers.
-
----
-
 ## License
 
 See [LICENSE](LICENSE) (MIT). By using this library you agree to comply with Microsoft's redistribution and licensing terms for GameInput.
