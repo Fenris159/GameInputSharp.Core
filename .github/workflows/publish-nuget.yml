@@ -9,6 +9,7 @@ on:
 permissions:
   contents: read
   id-token: write
+  packages: write
 
 concurrency:
   group: publish-nuget
@@ -73,4 +74,14 @@ jobs:
           dotnet nuget push "artifacts/packages/*.snupkg" `
             --source "https://api.nuget.org/v3/index.json" `
             --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" `
+            --skip-duplicate
+
+      - name: Publish package to GitHub Packages
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          dotnet nuget push "artifacts/packages/*.nupkg" `
+            --source "https://nuget.pkg.github.com/Fenris159/index.json" `
+            --api-key "$env:GITHUB_TOKEN" `
             --skip-duplicate
