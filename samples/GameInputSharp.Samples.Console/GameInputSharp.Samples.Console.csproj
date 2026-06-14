@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\GameInputSharp.Core\GameInputSharp.Core.csproj" />
     <!-- Explicit for testing: ensures Microsoft.GameInput is restored when running this sample (runtime DLL still required on machine) -->
-    <PackageReference Include="Microsoft.GameInput" Version="3.2.138" />
+    <PackageReference Include="Microsoft.GameInput" Version="3.4.218" />
   </ItemGroup>
 
 </Project>

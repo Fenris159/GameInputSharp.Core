@@ -8,7 +8,7 @@ Console.WriteLine("GameInputSharp.Samples.Console — device enumeration and gam
 
 // Check that Microsoft.GameInput NuGet is in cache (rules out "package not restored" as cause of load failure)
 const string GameInputPackageId = "microsoft.gameinput";
-const string GameInputPackageVersion = "3.2.138";
+const string GameInputPackageVersion = "3.4.218";
 string? packagesDir = Environment.GetEnvironmentVariable("NUGET_PACKAGES");
 if (string.IsNullOrEmpty(packagesDir))
     packagesDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".nuget", "packages");

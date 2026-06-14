@@ -6,7 +6,7 @@ This document explains how **GameInputSharp.Core** relates to the official **Mic
 
 ## NuGet fetches the package, but the package has no runtime DLL
 
-When you run **`dotnet restore`** or build the solution, NuGet **does** fetch **Microsoft.GameInput** from nuget.org. The package is stored in your **NuGet cache** (e.g. `%USERPROFILE%\.nuget\packages\microsoft.gameinput\3.2.138\`), not copied into your workspace. So you won’t see “official GameInput files” inside your Cursor project folder — that’s normal. The dependency is satisfied for build; the package is on disk in the cache.
+When you run **`dotnet restore`** or build the solution, NuGet **does** fetch **Microsoft.GameInput** from nuget.org. The package is stored in your **NuGet cache** (e.g. `%USERPROFILE%\.nuget\packages\microsoft.gameinput\3.4.218\`), not copied into your workspace. So you won’t see “official GameInput files” inside your Cursor project folder — that’s normal. The dependency is satisfied for build; the package is on disk in the cache.
 
 The important part: the **Microsoft.GameInput NuGet package does not contain GameInput.dll or GameInputRedist.dll**. It contains only:
 
@@ -40,13 +40,13 @@ They can add both explicitly, or they can add only **GameInputSharp.Core** and g
 In **GameInputSharp.Core.csproj** you have:
 
 ```xml
-<PackageReference Include="Microsoft.GameInput" Version="3.2.138" />
+<PackageReference Include="Microsoft.GameInput" Version="3.4.218" />
 ```
 
 That is a **dependency declaration**, not a copy of Microsoft’s package.
 
 - When you run **`dotnet pack`**, the built **GameInputSharp.Core** NuGet package (`.nupkg`) contains **only your content**: your DLL(s), README, and any docs you include. It does **not** include Microsoft.GameInput’s files.
-- Inside your `.nupkg`, the package metadata says: “This package **depends on** Microsoft.GameInput (version 3.2.138).” So your package is just **metadata + your wrapper**, not Microsoft’s code or binaries.
+- Inside your `.nupkg`, the package metadata says: “This package **depends on** Microsoft.GameInput (version 3.4.218).” So your package is just **metadata + your wrapper**, not Microsoft’s code or binaries.
 
 So the “C++ dependency” is **not** inside your package. It is a **reference** that tells NuGet: “Whoever installs GameInputSharp.Core must also have Microsoft.GameInput available.”
 

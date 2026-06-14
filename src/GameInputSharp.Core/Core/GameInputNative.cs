@@ -13,6 +13,10 @@ internal static partial class GameInputNative
 
     // GameInputKind (v3) — device/reading kind flags (see Microsoft GameInput docs)
     public const uint GameInputKindUnknown = 0x00000000;
+    public const uint GameInputKindRawDeviceReport = 0x00000001;
+    public const uint GameInputKindControllerAxis = 0x00000002;
+    public const uint GameInputKindControllerButton = 0x00000004;
+    public const uint GameInputKindControllerSwitch = 0x00000008;
     public const uint GameInputKindController = 0x0000000E;
     public const uint GameInputKindKeyboard = 0x00000010;
     public const uint GameInputKindMouse = 0x00000020;

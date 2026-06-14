@@ -8,6 +8,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+---
+
+## [1.0.0] - 2026-06-14
+
+### Changed
+
+- Promoted GameInputSharp.Core from alpha to stable version 1.0.0.
+- Updated the Microsoft.GameInput dependency from 3.2.138 to 3.4.218.
+- Updated the console sample to use Microsoft.GameInput 3.4.218.
+- Updated package installation and publishing documentation for the stable 1.0.0 package.
+
+### Added
+
+- Added public and internal constants for the GameInput raw/controller subflags:
+  - `RawDeviceReport`
+  - `ControllerAxis`
+  - `ControllerButton`
+  - `ControllerSwitch`
+
 ### Security and safety hardening
 
 The following improvements were implemented so that the wrapper’s security posture matches [docs/SECURITY.md](docs/SECURITY.md). That document is reframed as **what is implemented** (current mitigations); this changelog records the changes that made it possible.

@@ -7,6 +7,14 @@ public static class GameInputKinds
 {
     /// <summary>Unknown.</summary>
     public const uint Unknown = 0x00000000;
+    /// <summary>Raw device reports.</summary>
+    public const uint RawDeviceReport = 0x00000001;
+    /// <summary>Generic controller axes.</summary>
+    public const uint ControllerAxis = 0x00000002;
+    /// <summary>Generic controller buttons.</summary>
+    public const uint ControllerButton = 0x00000004;
+    /// <summary>Generic controller switches.</summary>
+    public const uint ControllerSwitch = 0x00000008;
     /// <summary>Generic controller (axis, button, switch).</summary>
     public const uint Controller = 0x0000000E;
     /// <summary>Keyboard.</summary>

@@ -62,7 +62,7 @@ Interpretation:
 ## NuGet / package not found
 
 - **“Microsoft.GameInput not found” or restore errors:**  
-  Add **Microsoft.GameInput** explicitly to your project (same version as in the wrapper, e.g. 3.2.138). The wrapper declares it as a dependency; NuGet should pull it from nuget.org when you install GameInputSharp.Core. If you’re on a private feed, ensure both packages are available.
+  Add **Microsoft.GameInput** explicitly to your project (same version as in the wrapper, e.g. 3.4.218). The wrapper declares it as a dependency; NuGet should pull it from nuget.org when you install GameInputSharp.Core. If you’re on a private feed, ensure both packages are available.
 
 - **“GameInputSharp.Core not found”:**  
   Ensure the package source that hosts GameInputSharp.Core is configured (e.g. nuget.org or your feed). For local development, use a local folder or `dotnet pack` and `dotnet add reference` to the built package.
