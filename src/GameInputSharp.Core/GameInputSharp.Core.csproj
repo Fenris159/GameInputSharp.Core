@@ -38,7 +38,7 @@
 
   <!-- Offline docs site (MkDocs). Build from repo root: pip install -r requirements-docs.txt && mkdocs build. Then dotnet pack. -->
   <Target Name="RunMkDocsBeforePack" BeforeTargets="GenerateNuspec;Pack" Condition="Exists('$(MSBuildThisFileDirectory)..\..\mkdocs.yml')">
-    <Exec Command="mkdocs build" WorkingDirectory="$(MSBuildThisFileDirectory)..\.." IgnoreExitCode="true" />
+    <Exec Command="python -m mkdocs build" WorkingDirectory="$(MSBuildThisFileDirectory)..\.." IgnoreExitCode="true" />
   </Target>
   <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)..\..\site')">
     <None Include="$(MSBuildThisFileDirectory)..\..\site\**\*" Pack="true" PackagePath="docs-site\%(RecursiveDir)%(Filename)%(Extension)" Visible="false" />
