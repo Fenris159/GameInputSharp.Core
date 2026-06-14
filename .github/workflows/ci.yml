@@ -58,7 +58,15 @@ jobs:
           }
 
       - name: Test
-        run: dotnet test tests/GameInputSharp.Tests/GameInputSharp.Tests.csproj --configuration Release --no-build --verbosity normal --filter "Category!=Hardware"
+        run: dotnet test tests/GameInputSharp.Tests/GameInputSharp.Tests.csproj --configuration Release --no-build --verbosity normal --filter "Category=CI" --logger "trx;LogFileName=ci-test-results.trx" --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: test-results
+          path: TestResults/**
+          if-no-files-found: ignore
 
       - name: Pack
         run: dotnet pack src/GameInputSharp.Core/GameInputSharp.Core.csproj --configuration Release --no-build --output artifacts/packages

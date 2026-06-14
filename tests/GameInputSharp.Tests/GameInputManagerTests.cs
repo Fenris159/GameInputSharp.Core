@@ -22,6 +22,7 @@ public class GameInputManagerTests
         Assert.True(devices.Count >= 0);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetDevices_AfterDispose_Throws()
     {
@@ -41,6 +42,7 @@ public class GameInputManagerTests
         Assert.NotNull(second);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void Dispose_IsIdempotent_DoesNotThrow()
     {
@@ -49,6 +51,7 @@ public class GameInputManagerTests
         manager.Dispose(); // second dispose must not throw
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetCurrentTimestamp_AfterDispose_Throws()
     {
@@ -67,6 +70,7 @@ public class GameInputManagerTests
         Assert.True(ts >= 0);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void TryGetDeviceByDeviceId_NullOrEmpty_ReturnsFalseAndNullDevice()
     {
@@ -80,6 +84,7 @@ public class GameInputManagerTests
         Assert.Null(outEmpty);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void TryGetDeviceByDeviceId_AfterDispose_Throws()
     {
@@ -148,6 +153,7 @@ public class GameInputManagerTests
         }
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetCurrentGamepadState_NullGamepad_ReturnsNull()
     {
@@ -156,6 +162,7 @@ public class GameInputManagerTests
         Assert.Null(state);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetCurrentGamepadState_AfterDispose_Throws()
     {
@@ -164,6 +171,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.GetCurrentGamepadState(null));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetCurrentMouseState_NullMouse_ReturnsNull()
     {
@@ -172,6 +180,7 @@ public class GameInputManagerTests
         Assert.Null(state);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetReadingTimestamp_NullReading_ReturnsZero()
     {
@@ -180,6 +189,7 @@ public class GameInputManagerTests
         Assert.Equal(0UL, ts);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GetReadingTimestamp_AfterDispose_Throws()
     {
@@ -188,6 +198,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.GetReadingTimestamp(null));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void FindDeviceFromId_NullOrShortArray_ReturnsNull()
     {
@@ -197,6 +208,7 @@ public class GameInputManagerTests
         Assert.Null(manager.FindDeviceFromId(new byte[16]));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void FindDeviceFromId_AfterDispose_Throws()
     {
@@ -206,6 +218,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.FindDeviceFromId(id));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void FindDeviceFromPlatformString_NullOrEmpty_ReturnsNull()
     {
@@ -214,6 +227,7 @@ public class GameInputManagerTests
         Assert.Null(manager.FindDeviceFromPlatformString(""));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void FindDeviceFromPlatformString_AfterDispose_Throws()
     {
@@ -222,6 +236,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.FindDeviceFromPlatformString("some-string"));
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void RegisterReadingCallback_NullDevice_ReturnsFalse()
     {
@@ -230,6 +245,7 @@ public class GameInputManagerTests
         Assert.False(ok);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void RegisterReadingCallback_AfterDispose_Throws()
     {

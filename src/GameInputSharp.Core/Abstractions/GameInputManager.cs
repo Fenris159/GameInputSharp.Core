@@ -173,8 +173,9 @@ public sealed class GameInputManager : IDisposable
     public IInputDevice? FindDeviceFromId(byte[] deviceIdBytes)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
+        if (deviceIdBytes == null || deviceIdBytes.Length < 32) return null;
         var gi = GetOrCreateGameInput();
-        if (gi == null || deviceIdBytes == null || deviceIdBytes.Length < 32) return null;
+        if (gi == null) return null;
         IntPtr ptr = GameInputInterop.FindDeviceFromId(gi, deviceIdBytes);
         if (ptr == IntPtr.Zero) return null;
         try
@@ -194,8 +195,9 @@ public sealed class GameInputManager : IDisposable
     public IInputDevice? FindDeviceFromPlatformString(string platformString)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
+        if (string.IsNullOrEmpty(platformString)) return null;
         var gi = GetOrCreateGameInput();
-        if (gi == null || string.IsNullOrEmpty(platformString)) return null;
+        if (gi == null) return null;
         IntPtr ptr = GameInputInterop.FindDeviceFromPlatformString(gi, platformString);
         if (ptr == IntPtr.Zero) return null;
         try

@@ -8,6 +8,7 @@ namespace GameInputSharp.Tests;
 
 public class DeviceWrapperTests
 {
+    [Trait("Category", "CI")]
     [Fact]
     public void HapticLocation_Enum_HasExpectedValues()
     {
@@ -28,6 +29,7 @@ public class DeviceWrapperTests
         }
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GameInputGamepadButtons_HasExpectedBitValues()
     {
@@ -37,6 +39,7 @@ public class DeviceWrapperTests
         Assert.Equal(0x00000000u, (uint)GameInputGamepadButtons.None);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GamepadState_Buttons_CanBeTestedWithGameInputGamepadButtons()
     {
@@ -46,6 +49,7 @@ public class DeviceWrapperTests
         Assert.False((buttons & (uint)GameInputGamepadButtons.B) != 0);
     }
 
+    [Trait("Category", "CI")]
     [Fact]
     public void GameInputGamepadAxes_HasExpectedValues()
     {

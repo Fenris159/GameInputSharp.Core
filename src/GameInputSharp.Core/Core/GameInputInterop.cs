@@ -173,6 +173,14 @@ internal static partial class GameInputInterop
         {
             return null;
         }
+        catch (InvalidCastException)
+        {
+            return null;
+        }
+        catch (COMException)
+        {
+            return null;
+        }
     }
 
     /// <summary>Enumerates connected devices via blocking device callback. Returns list of raw device pointers (caller must release).</summary>
