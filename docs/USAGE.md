@@ -2,8 +2,6 @@
 
 This guide is for **game developers and PC application developers** using GameInputSharp.Core for input devices (gamepads, keyboards, mice) and haptics on Windows. It covers device enumeration, polling, rumble, advanced haptics, and device connect/disconnect callbacks.
 
-**Medical, robotics, or simulation** (multi-device aggregation, audit logging, calibration, remote haptics): use the **GameInputSharp.Enterprise** package and its documentation.
-
 ---
 
 ## Installation and requirements
@@ -511,7 +509,7 @@ using (var manager = new GameInputManager())
 
 ## Samples and compatibility
 
-- **Samples (Core repo):** `samples/GameInputSharp.Samples.Console` (enumeration and rumble), `samples/GameInputSharp.Samples.MonoGame` (game loop integration). **Medical/simulation** (e.g. GameInputSharp.Samples.MedicalSim) is in the **GameInputSharp.Enterprise** package and repository.
+- **Samples (Core repo):** `samples/GameInputSharp.Samples.Console` (enumeration and rumble), `samples/GameInputSharp.Samples.MonoGame` (game loop integration).
 - **Engines and desktop:** See [COMPATIBILITY.md](COMPATIBILITY.md) for Unity, MonoGame, Godot, Stride, and WPF/WinUI.
 
 For full API details, see the XML documentation on the types in your IDE or in the packaged assembly.

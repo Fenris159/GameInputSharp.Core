@@ -8,7 +8,6 @@ namespace GameInputSharp.Haptics;
 /// </summary>
 /// <remarks>
 /// Maps to IGameInputDevice.CreateForceFeedbackEffect. Up to 8 locations per device.
-/// For more than 8 locations (e.g. multi-device aggregation), use the GameInputSharp.Enterprise package and its HapticAggregator type.
 /// </remarks>
 public sealed class AdvancedHaptics
 {

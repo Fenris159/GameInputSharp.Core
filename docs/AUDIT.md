@@ -1,6 +1,6 @@
 # GameInputSharp.Core — audit summary
 
-This document summarizes whether **GameInputSharp.Core** meets its goal of being a comprehensive C# wrapper for GameInput (game and desktop input) and identifies potential problems or bugs for developers who use it. **Multi-device haptic aggregation** and **medical/robotics/simulation** features are in the separate **GameInputSharp.Enterprise** package; that package has its own [AUDIT.md](https://github.com/your-org/GameInputSharpEnterprise/blob/main/docs/AUDIT.md) and documentation.
+This document summarizes whether **GameInputSharp.Core** meets its goal of being a comprehensive C# wrapper for GameInput (game and desktop input) and identifies potential problems or bugs for developers who use it.
 
 **API alignment with Microsoft docs:** Initialization, enumeration, device info layout, and COM method signatures align with the official GameInput API. See **[API_ALIGNMENT.md](API_ALIGNMENT.md)** for current alignment (entry point, device kind filter, display name handling) and a checklist when changing interop or adding APIs. Historical changes are in **[CHANGELOG.md](CHANGELOG.md)**.
 
@@ -121,5 +121,5 @@ These v3 APIs are either not exposed or only partially exposed. They are optiona
 
 ## 4. Conclusion
 
-- **Goal:** **GameInputSharp.Core** is **comprehensive for its scope**: game/desktop input, haptics (basic and advanced, up to 8 locations per device), reading and device callbacks, sensors/motion, raw device reports, and native aggregate devices. Medical/robotics features (e.g. HapticAggregator, SurgicalHapticStream, AuditLogging) are in the separate **GameInputSharp.Enterprise** package. Remaining Core gaps are optional v3 APIs (see §1.1) and the separate v0 device interface (e.g. GetBatteryState, exclusive raw access).
+- **Goal:** **GameInputSharp.Core** is **comprehensive for its scope**: game/desktop input, haptics (basic and advanced, up to 8 locations per device), reading and device callbacks, sensors/motion, raw device reports, and native aggregate devices. Remaining Core gaps are optional v3 APIs (see §1.1) and the separate v0 device interface (e.g. GetBatteryState, exclusive raw access).
 - **Risks:** The main developer-facing risks are mitigated: (1) device identity via `DeviceCallbackEventArgs.DeviceId` and **TryGetDeviceByDeviceId**; (2) thread safety and callback rules in class remarks and USAGE.md; (3) disposal ownership documented; (4) reading timestamp via **GetReadingTimestamp(reading)**; (5) optional logging for key failure paths when `GameInputManager(ILogger)` is used. Device wrappers have finalizers to avoid ref leaks.

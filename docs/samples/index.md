@@ -11,4 +11,4 @@ Runnable examples and documented snippets for each supported environment. Each s
 | **Stride** | `samples/GameInputSharp.Samples.Stride` | [Samples — Stride](stride.md) |
 | **WPF / WinUI** | `samples/GameInputSharp.Samples.Wpf` | [Samples — WPF / WinUI](wpf-winui.md) |
 
-All samples require **Windows** and the **GameInput runtime** (GameInput.dll / GameInputRedist.dll). For medical/simulation samples (e.g. GameInputSharp.Samples.MedicalSim), see the **GameInputSharp.Enterprise** package.
+All samples require **Windows** and the **GameInput runtime** (GameInput.dll / GameInputRedist.dll).

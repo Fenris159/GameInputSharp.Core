@@ -72,8 +72,6 @@ See [Quick start](quickstart.md) for a minimal runnable setup. See [Full usage g
 - **GameInputSharp.Samples.MonoGame** — Game loop integration (Update/Draw with `GameInputManager`).
 - **samples/GameInputSharp.Samples.Unity** — Unity integration notes and optional Input System override.
 
-**Medical / simulation** (e.g. **GameInputSharp.Samples.MedicalSim**) — in the **GameInputSharp.Enterprise** package and repo, not in Core.
-
 ---
 
 ## Compliance

@@ -1,6 +1,6 @@
 # Changelog — GameInputSharp.Core
 
-All notable changes to the **GameInputSharp.Core** package are documented here. This changelog is specific to the Core package only; for **GameInputSharp.Enterprise** see that package's repository and its own `docs/CHANGELOG.md`.
+All notable changes to the **GameInputSharp.Core** package are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 

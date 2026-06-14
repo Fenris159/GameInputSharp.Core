@@ -1,10 +1,8 @@
 # GameInputSharp.Core
 
-Universal, idiomatic C# wrapper for **Microsoft.GameInput**. Targets .NET 8+ with optional shims for Unity, MonoGame, Godot C#, Stride, and WPF/WinUI. This is the **open-core** package: game and desktop input, haptics, and device callbacks.
+Universal, idiomatic C# wrapper for **Microsoft.GameInput**. Targets .NET 8+ with optional shims for Unity, MonoGame, Godot C#, Stride, and WPF/WinUI. This package covers game and desktop input, haptics, and device callbacks.
 
-For **medical, simulation, and robotics** extensions (multi-device haptic aggregation, calibration, audit logging, network latency compensation, ROS2 stubs), use the separate **GameInputSharp.Enterprise** package, which depends on this package.
-
-**Repository layout:** This repo contains the **GameInputSharp.Core** project only (open source). Open **GameInputSharp.Core.sln** to build the library, samples, and tests. There are no Enterprise-specific files or build output in this directory. The **GameInputSharp.Enterprise** package is a separate, licensed product in its own repository and references this package via NuGet only. **During development** this package is not published to NuGet.org; after release, other developers and Enterprise will rely on NuGet for the dependency.
+**Repository layout:** This repo contains the **GameInputSharp.Core** project only. Open **GameInputSharp.Core.sln** to build the library, samples, and tests. The package is published on NuGet.org as [GameInputSharp.Core](https://www.nuget.org/packages/GameInputSharp.Core/).
 
 ---
 
@@ -53,7 +51,7 @@ foreach (var device in devices)
 
 ## Setup
 
-1. Add **GameInputSharp.Core** and **Microsoft.GameInput** NuGet packages to your project. The **Microsoft.GameInput** reference is required (we wrap that API) and must be present.
+1. Add the [**GameInputSharp.Core** NuGet package](https://www.nuget.org/packages/GameInputSharp.Core/) to your project. The official **Microsoft.GameInput** package is required by the wrapper and is restored by NuGet.
 2. **NuGet vs runtime:** The Microsoft.GameInput NuGet supplies C++ headers and a link library for native builds; it does **not** ship the runtime DLL (GameInput.dll / GameInputRedist.dll). The wrapper loads the native DLL at runtime from: (1) the application directory, then (2) `%SystemRoot%\System32`. The runtime must be installed on the machine (e.g. inbox on newer Windows, or `winget install Microsoft.GameInput`, or the GameInput redist). If the DLL is present but load fails, install [Visual C++ Redistributable (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist). If no compatible runtime loads, `GetDevices()` returns an empty list without throwing.
 3. Target **.NET 8+** (or use the provided Unity/MonoGame shims where applicable). The library is intended for **Windows**; other targets build but return no devices.
 
@@ -80,8 +78,6 @@ foreach (var device in devices)
 - **GameInputSharp.Samples.Console** — Device enumeration and basic gamepad rumble; run on Windows with GameInput runtime for full behavior.
 - **GameInputSharp.Samples.MonoGame** — MonoGame game loop integration (Update/Draw with GameInputManager).
 - **samples/GameInputSharp.Samples.Unity/README.md** — Unity integration notes and optional Input System override.
-
-**Medical / simulation samples** (e.g. **GameInputSharp.Samples.MedicalSim**) are in the **GameInputSharp.Enterprise** package and repository, not in this Core repo.
 
 ---
 

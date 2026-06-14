@@ -84,4 +84,3 @@ if ((args.CurrentStatus & GameInputDeviceStatus.Connected) != 0)
 | Changelog (Core only) | [CHANGELOG.md](CHANGELOG.md) |
 | Security and safety | [SECURITY.md](SECURITY.md) |
 | Unity, MonoGame, WPF, etc. | [COMPATIBILITY.md](COMPATIBILITY.md) |
-| Medical/robotics, aggregation | **GameInputSharp.Enterprise** package and its documentation (e.g. docs/MEDICAL_ROBOTICS.md in that repo) |

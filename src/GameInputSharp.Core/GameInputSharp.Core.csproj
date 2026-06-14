@@ -5,7 +5,7 @@
     <AssemblyName>GameInputSharp.Core</AssemblyName>
     <PackageId>GameInputSharp.Core</PackageId>
     <Version>0.1.0-alpha</Version>
-    <Description>Universal, idiomatic C# wrapper for Microsoft.GameInput. Gamepads, keyboards, mice, advanced haptics, device callbacks, and force feedback. Requires Microsoft.GameInput NuGet and gameinput.dll redistribution per Microsoft rules. For medical/simulation/robotics extensions, use the GameInputSharp.Enterprise package.</Description>
+    <Description>Universal, idiomatic C# wrapper for Microsoft.GameInput. Gamepads, keyboards, mice, advanced haptics, device callbacks, and force feedback. Requires Microsoft.GameInput NuGet and gameinput.dll redistribution per Microsoft rules.</Description>
     <PackageTags>gameinput;haptics;input;gaming;xbox;controller;gamepad;windows;unity;monogame</PackageTags>
     <PackageProjectUrl>https://github.com/Fenris159/GameInputSharp.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Fenris159/GameInputSharp.Core</RepositoryUrl>

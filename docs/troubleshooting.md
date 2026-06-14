@@ -119,5 +119,3 @@ A: Each call returns new wrapper instances. Use `DeviceId` to correlate or `TryG
 **Q: Where is the full API reference?**  
 A: Use the XML documentation in your IDE (IntelliSense) or the assembly. This site covers [API constants and flags](API_REFERENCE.md), [mapping](MAPPING_REFERENCE.md), and [usage](USAGE.md); for every type/method, see the packaged DLL and XML.
 
-**Q: Medical / simulation / robotics features?**  
-A: Use the **GameInputSharp.Enterprise** package and its documentation; it extends this package with aggregation, calibration, audit logging, and other features.
