@@ -33,7 +33,7 @@ Universal, idiomatic C# wrapper for **Microsoft.GameInput**. Targets .NET 8+ wit
 | **Axis/button mapping reference** | [docs/MAPPING_REFERENCE.md](docs/MAPPING_REFERENCE.md) | Library of all device control layouts: gamepad, flight stick, racing wheel, arcade stick (axes, buttons, switches) for use with `InputMapper`. |
 | **Engines and desktop setup** | [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) | Unity, MonoGame, Godot, Stride, WPF/WinUI. |
 | **Packaging and Microsoft.GameInput** | [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md) | How the wrapper depends on the official NuGet without bundling Microsoft's files. |
-| **Changelog (Core only)** | [docs/CHANGELOG.md](docs/CHANGELOG.md) | Version history and notable changes for GameInputSharp.Core. |
+| **Changelog (Core only)** | [CHANGELOG.md](CHANGELOG.md) | Version history and notable product changes for GameInputSharp.Core. |
 | **Security and safety** | [docs/SECURITY.md](docs/SECURITY.md) | Implemented mitigations (DLL load, buffers, callbacks). |
 
 ---

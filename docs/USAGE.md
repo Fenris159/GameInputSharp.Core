@@ -10,7 +10,7 @@ This guide is for **game developers and PC application developers** using GameIn
 
    ```xml
    <ItemGroup>
-     <PackageReference Include="GameInputSharp.Core" Version="1.0.0" />
+     <PackageReference Include="GameInputSharp.Core" Version="1.0.1" />
      <PackageReference Include="Microsoft.GameInput" Version="3.4.218" />
    </ItemGroup>
    ```

@@ -1,12 +1,28 @@
 # Changelog — GameInputSharp.Core
 
-All notable changes to the **GameInputSharp.Core** package are documented here.
+All notable product changes to the **GameInputSharp.Core** package are documented here.
+
+This changelog intentionally excludes workflow, CI, publishing, and package-distribution automation changes. Those are repository operations, not package behavior.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
 ## [Unreleased]
+
+---
+
+## [1.0.1] - 2026-06-14
+
+### Fixed
+
+- Treat unsupported GameInput COM interfaces as an unavailable runtime instead of throwing during initialization. This keeps `GetDevices()` and related APIs aligned with the documented behavior: if the GameInput runtime is missing or incompatible, calls return empty/null results rather than crashing.
+- Validate null, empty, or short inputs in `FindDeviceFromId` and `FindDeviceFromPlatformString` before attempting GameInput initialization.
+
+### Changed
+
+- Removed documentation references that directed medical, simulation, or robotics use cases to a separate Enterprise package.
+- Added a NuGet-specific package README without GitHub badges while keeping the repository README optimized for GitHub.
 
 ---
 
@@ -17,7 +33,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Promoted GameInputSharp.Core from alpha to stable version 1.0.0.
 - Updated the Microsoft.GameInput dependency from 3.2.138 to 3.4.218.
 - Updated the console sample to use Microsoft.GameInput 3.4.218.
-- Updated package installation and publishing documentation for the stable 1.0.0 package.
 
 ### Added
 
