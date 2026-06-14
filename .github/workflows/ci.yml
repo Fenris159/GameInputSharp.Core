@@ -21,7 +21,7 @@ concurrency:
 jobs:
   build-test:
     name: Build and test
-    runs-on: windows-2025
+    runs-on: windows-2025-vs2026
 
     steps:
       - name: Checkout
@@ -40,8 +40,25 @@ jobs:
       - name: Build
         run: dotnet build GameInputSharp.Core.sln --configuration Release --no-restore
 
+      - name: GameInput diagnostics
+        shell: pwsh
+        run: |
+          $system32 = [Environment]::SystemDirectory
+          $paths = @(
+            Join-Path $system32 'GameInput.dll'
+            Join-Path $system32 'GameInputRedist.dll'
+          )
+          foreach ($path in $paths) {
+            if (Test-Path $path) {
+              $item = Get-Item $path
+              Write-Host "$path exists, version $($item.VersionInfo.FileVersion)"
+            } else {
+              Write-Host "$path not found"
+            }
+          }
+
       - name: Test
-        run: dotnet test tests/GameInputSharp.Tests/GameInputSharp.Tests.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test tests/GameInputSharp.Tests/GameInputSharp.Tests.csproj --configuration Release --no-build --verbosity normal --filter "Category!=Hardware"
 
       - name: Pack
         run: dotnet pack src/GameInputSharp.Core/GameInputSharp.Core.csproj --configuration Release --no-build --output artifacts/packages

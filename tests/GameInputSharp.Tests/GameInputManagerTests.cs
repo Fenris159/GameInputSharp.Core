@@ -12,6 +12,7 @@ namespace GameInputSharp.Tests;
 
 public class GameInputManagerTests
 {
+    [Trait("Category", "Hardware")]
     [Fact]
     public void GetDevices_ReturnsList_DoesNotThrow()
     {
@@ -29,6 +30,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.GetDevices());
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void GetDevices_CalledMultipleTimes_DoesNotThrow()
     {
@@ -55,6 +57,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.GetCurrentTimestamp());
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void GetCurrentTimestamp_WhenNotDisposed_ReturnsValue()
     {
@@ -85,6 +88,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.TryGetDeviceByDeviceId("some-id", out _));
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void TryGetDeviceByDeviceId_NonExistentId_ReturnsFalse()
     {
@@ -94,6 +98,7 @@ public class GameInputManagerTests
         Assert.Null(device);
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void TryGetDeviceByDeviceId_WhenDeviceExists_ReturnsTrueAndDevice()
     {
@@ -108,6 +113,7 @@ public class GameInputManagerTests
         device.Dispose();
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void Gamepad_WhenConnected_GetCurrentGamepadState_ReturnsNonNull()
     {
@@ -125,6 +131,7 @@ public class GameInputManagerTests
         }
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void Gamepad_WhenConnected_PlayForceFeedbackConstant_ReturnsBool()
     {
@@ -231,6 +238,7 @@ public class GameInputManagerTests
         Assert.Throws<ObjectDisposedException>(() => manager.RegisterReadingCallback(null, 0, out _));
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void Constructor_WithNullLogger_DoesNotThrow()
     {
@@ -239,6 +247,7 @@ public class GameInputManagerTests
         Assert.NotNull(devices);
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void Constructor_WithLogger_DoesNotThrow()
     {

@@ -16,6 +16,7 @@ public class DeviceWrapperTests
         Assert.True((int)HapticLocation.Location7 >= 7);
     }
 
+    [Trait("Category", "Hardware")]
     [Fact]
     public void IInputDevice_Contract_DisplayNameAndDeviceId_AreStrings()
     {
