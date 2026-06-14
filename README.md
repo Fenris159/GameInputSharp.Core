@@ -1,5 +1,12 @@
 # GameInputSharp.Core
 
+[![CI](https://github.com/Fenris159/GameInputSharp.Core/actions/workflows/ci.yml/badge.svg)](https://github.com/Fenris159/GameInputSharp.Core/actions/workflows/ci.yml)
+[![NuGet](https://img.shields.io/nuget/v/GameInputSharp.Core.svg)](https://www.nuget.org/packages/GameInputSharp.Core/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/GameInputSharp.Core.svg)](https://www.nuget.org/packages/GameInputSharp.Core/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![.NET](https://img.shields.io/badge/.NET-8%20%7C%209-512BD4.svg)](src/GameInputSharp.Core/GameInputSharp.Core.csproj)
+[![Windows](https://img.shields.io/badge/platform-Windows-0078D4.svg)](docs/COMPATIBILITY.md)
+
 Universal, idiomatic C# wrapper for **Microsoft.GameInput**. Targets .NET 8+ with optional shims for Unity, MonoGame, Godot C#, Stride, and WPF/WinUI. This package covers game and desktop input, haptics, and device callbacks.
 
 **Repository layout:** This repo contains the **GameInputSharp.Core** project only. Open **GameInputSharp.Core.sln** to build the library, samples, and tests. The package is published on NuGet.org as [GameInputSharp.Core](https://www.nuget.org/packages/GameInputSharp.Core/).
